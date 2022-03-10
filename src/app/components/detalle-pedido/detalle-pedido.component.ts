@@ -37,7 +37,7 @@ export class DetallePedidoComponent implements OnInit {
       (res) => 
       {
         this.pedido=res;
-        if(this.pedido.estadoPedido==='Creada en OV'){
+        if(this.pedido.estadoPedido==='Listo para despachar'){
             this.deshabilitar=true;
         }
       },
