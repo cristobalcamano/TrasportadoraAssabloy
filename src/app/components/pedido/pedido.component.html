@@ -1,0 +1,46 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Orden Pedido</th>
+            <th scope="col">Orden Venta</th>
+            <th scope="col">Factura</th>
+            <th scope="col">Referencia Compra</th>
+            <th scope="col">Fecha Creación</th>
+            <th scope="col">canal Origen Compra</th>
+            <th scope="col">Estado Pedido</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listaPedidos">
+            <td>
+                {{item.id}}
+            </td>
+            <td>
+                {{item.ordenPedido}}
+            </td>
+            <td>
+                {{item.ordenVenta}}
+            </td>
+            <td>
+                {{item.factura}}
+            </td>
+            <td>
+                {{item.referenciaCompra}}
+            </td>
+            <td>
+                {{item.fechaCreacion}}
+            </td>
+            <td>
+                {{item.canalOrigenCompra}}
+            </td>
+            <td>
+                {{item.estadoPedido}}
+            </td>
+            <td>
+                <a class="btn btn-warning" [routerLink]="['/Transportadora/pedido',item.id] " routerLinkActive="router-link-active ">Detalle</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
