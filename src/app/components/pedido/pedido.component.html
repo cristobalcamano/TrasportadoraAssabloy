@@ -44,3 +44,36 @@
         </tr>
     </tbody>
 </table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li *ngIf="page.number == 0" class="page-item disabled">
+            <a (click)="getPrimeraPagina();" class="page-link">Primero</a>
+        </li>
+        <li *ngIf="page.number >0" class="page-item ">
+            <a (click)="getPrimeraPagina();" class="page-link">Primero</a>
+        </li>
+        <li *ngIf="page.number == 0" class="page-item disabled">
+            <a (click)="previous();" class="page-link">Previous</a>
+        </li>
+        <li *ngIf="page.number >0" class="page-item ">
+            <a (click)="previous();" class="page-link">Previous</a>
+        </li>
+
+        <li *ngFor="let paginas of cantidad;  index as i;" #paginas [id]="paginas" class="page-item">
+            <a class="page-link  " (click)="numeroPaginador(paginas)">{{paginas}}</a>
+        </li>
+        <li *ngIf="estadoNextdeshabilitado" class="page-item disabled">
+            <a (click)="setNext();" class="page-link">Next</a>
+        </li>
+        <li *ngIf="!estadoNextdeshabilitado" class="page-item ">
+            <a (click)="setNext();" class="page-link">Next</a>
+        </li>
+        <li *ngIf="estadoNextdeshabilitado" class="page-item disabled">
+            <a (click)="getUltimaPagina();" class="page-link">Ultimo</a>
+        </li>
+        <li *ngIf="!estadoNextdeshabilitado" class="page-item ">
+            <a (click)="getUltimaPagina();" class="page-link">Ultimo</a>
+        </li>
+
+    </ul>
+</nav>
